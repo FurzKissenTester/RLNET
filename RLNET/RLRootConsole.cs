@@ -450,7 +450,7 @@ namespace RLNET
 
             //Clear
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.ClearColor(Color.Black);
+            GL.ClearColor(OpenTK.Color.Black);
 
             //Set Projection
             GL.MatrixMode(MatrixMode.Projection);
@@ -570,7 +570,7 @@ namespace RLNET
             texId = GL.GenTexture();
             GL.BindTexture(TextureTarget.Texture2D, texId);
 
-            Bitmap bmp = new Bitmap(filename);
+            var bmp = new System.Drawing.Bitmap(filename);
             BitmapData bmpData = bmp.LockBits(
                 new System.Drawing.Rectangle(0, 0, bmp.Width, bmp.Height),
                 ImageLockMode.ReadOnly,
